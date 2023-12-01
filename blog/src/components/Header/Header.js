@@ -21,7 +21,7 @@ const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
   &:hover {
-    color: lightgray;
+    color: orange;
   }
 `
 
@@ -43,4 +43,4 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export { Header } 
