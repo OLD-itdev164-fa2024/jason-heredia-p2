@@ -1,31 +1,33 @@
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import styled from 'styled-components'
-import { H1 } from '../Heading'
-import { Section } from '../Section'
+import styled from "styled-components"
+import PropTypes from "prop-types"
+import { H1 } from "../Heading"
+import { Section } from "../Section"
+import { Search } from 'styled-icons/feather'
+import { IconButton } from "../Button"
 
 const Outer = styled.header`
-  background: ${props => props.theme.header.backgroundColor};
+  background: ${({theme}) => theme.variants.header.primary.backgroundColor};
   margin-bottom: 1.45rem;
   margin: 0 auto;
   padding: var(--space-4) var(--size-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+  `
 
 const StyledLink = styled(Link)`
-  color: white;
+  color: #fff;
   text-decoration: none;
   &:hover {
-    color: lightgray;
+    color: #ccc;
   }
 `
 
 const Header = ({ siteTitle }) => (
   <Outer>
-    <Section width={11/12}>
+    <Section width={9/11}>
       <H1>
         <StyledLink to="/">
           {siteTitle}
@@ -33,7 +35,7 @@ const Header = ({ siteTitle }) => (
       </H1>
     </Section>
     <Section width={1/12}>
-      Search
+      <IconButton icon={<Search />} variant='contrast'/>
     </Section>
   </Outer>
 )
@@ -46,4 +48,4 @@ Header.defaultProps = {
   siteTitle: ``,
 }
 
-export { Header } 
+export { Header }
